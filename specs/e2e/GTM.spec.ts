@@ -225,7 +225,7 @@ test.describe("single shipment", () => {
     const orderNumber = await checkoutPage.getOrderNumber()
 
     expect(dataLayer[0].ecommerce.transaction_id).toBe(
-      parseInt(orderNumber.replace("#", ""))
+      orderNumber.replace("#", "")
     )
     expect(dataLayer[0].ecommerce.items?.length).toBe(2)
   })
@@ -432,7 +432,7 @@ test.describe("with bundle", () => {
     const orderNumber = await checkoutPage.getOrderNumber()
 
     expect(dataLayer[0].ecommerce.transaction_id).toBe(
-      parseInt(orderNumber.replace("#", ""))
+      orderNumber.replace("#", "")
     )
     expect(dataLayer[0].ecommerce.items?.length).toBe(1)
   })
@@ -490,7 +490,7 @@ test.describe("with bundle", () => {
     const orderNumber = await checkoutPage.getOrderNumber()
 
     expect(dataLayer[0].ecommerce.transaction_id).toBe(
-      parseInt(orderNumber.replace("#", ""))
+      orderNumber.replace("#", "")
     )
     expect(dataLayer[0].ecommerce.items?.length).toBe(1)
   })
@@ -538,7 +538,7 @@ test.describe("with bundle", () => {
     const orderNumber = await checkoutPage.getOrderNumber()
 
     expect(dataLayer[0].ecommerce.transaction_id).toBe(
-      parseInt(orderNumber.replace("#", ""))
+      orderNumber.replace("#", "")
     )
     expect(dataLayer[0].ecommerce.items?.length).toBe(1)
 
