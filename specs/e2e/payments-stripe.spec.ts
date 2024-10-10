@@ -38,11 +38,11 @@ test.describe("customer with Stripe without saving", () => {
 
     await checkoutPage.selectPayment("stripe")
 
-    const element = await checkoutPage.page.locator(
+    const element = checkoutPage.page.locator(
       "[data-testid=payment-save-wallet]"
     )
-    expect(element).toBeVisible()
-    expect(element).not.toBeChecked()
+    await expect(element).toBeVisible()
+    await expect(element).not.toBeChecked()
 
     await checkoutPage.setPayment("stripe")
 
@@ -90,16 +90,13 @@ test.describe("customer with Stripe with saving", () => {
 
     await checkoutPage.checkPaymentSummary("€10,00")
 
-    let element = await checkoutPage.page.locator(
-      "[data-testid=payment-save-wallet]"
-    )
-    expect(element).toBeVisible()
-    expect(element).not.toBeChecked()
-    await element.check()
-    element = await checkoutPage.page.locator(
-      "[data-testid=payment-save-wallet]"
-    )
-    expect(element).toBeChecked()
+    let element = checkoutPage.page.locator("[data-testid=payment-save-wallet]")
+    await expect(element).toBeVisible()
+    await expect(element).not.toBeChecked()
+    await checkoutPage.page.waitForTimeout(2000)
+    await element.check({ force: true })
+    element = checkoutPage.page.locator("[data-testid=payment-save-wallet]")
+    await expect(element).toBeChecked()
 
     await checkoutPage.save("Payment")
   })
@@ -187,10 +184,10 @@ test.describe("guest with Stripe", () => {
 
     await checkoutPage.setPayment("stripe")
 
-    const element = await checkoutPage.page.locator(
+    const element = checkoutPage.page.locator(
       "[data-testid=payment-save-wallet]"
     )
-    expect(element).not.toBeVisible()
+    await expect(element).not.toBeVisible()
 
     await checkoutPage.setPayment("stripe")
 
@@ -276,7 +273,7 @@ test.describe("guest with Stripe", () => {
     const element = await checkoutPage.page.locator(
       "[data-testid=payment-save-wallet]"
     )
-    expect(element).not.toBeVisible()
+    await expect(element).not.toBeVisible()
 
     await checkoutPage.checkPaymentSummary("€10,00")
 

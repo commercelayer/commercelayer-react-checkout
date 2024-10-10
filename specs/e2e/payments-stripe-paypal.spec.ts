@@ -35,10 +35,10 @@ test.describe("guest with PayPal", () => {
 
     await checkoutPage.setPayment("stripe-paypal")
 
-    const element = await checkoutPage.page.locator(
+    const element = checkoutPage.page.locator(
       "[data-testid=payment-save-wallet]"
     )
-    expect(element).not.toBeVisible()
+    await expect(element).not.toBeVisible()
 
     await checkoutPage.checkPaymentSummary("€10,00")
 
@@ -68,10 +68,10 @@ test.describe("guest with PayPal", () => {
 
     await checkoutPage.setPayment("stripe-paypal")
 
-    const element = await checkoutPage.page.locator(
+    const element = checkoutPage.page.locator(
       "[data-testid=payment-save-wallet]"
     )
-    expect(element).not.toBeVisible()
+    await expect(element).not.toBeVisible()
 
     await checkoutPage.checkPaymentSummary("€10,00")
 
