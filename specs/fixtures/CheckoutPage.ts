@@ -33,9 +33,8 @@ export class CheckoutPage {
   }
 
   async goto({ orderId, token }: GoToProps) {
-    const url = `${
-      process.env.NEXT_PUBLIC_BASE_PATH || ""
-    }/${orderId}?accessToken=${token}`
+    const url = `${process.env.NEXT_PUBLIC_BASE_PATH || ""
+      }/${orderId}?accessToken=${token}`
 
     await this.page.route("**/api/organization**", (route) => {
       // // Add a prefix to the title.
@@ -475,10 +474,10 @@ export class CheckoutPage {
       }
       const fieldType =
         key === "country_code" ||
-        (key === "state_code" &&
-          address.country_code &&
-          // TODO Adjust to check for select or input
-          ["IT", "US"].includes(address.country_code))
+          (key === "state_code" &&
+            address.country_code &&
+            // TODO Adjust to check for select or input
+            ["IT", "US"].includes(address.country_code))
           ? "select"
           : "input"
       const element = this.page.locator(`${fieldType}[name=${type}_${key}]`)
@@ -627,7 +626,7 @@ export class CheckoutPage {
   }
 
   async checkLineItemAmount(text?: string) {
-    const element = await this.page.getByTestId(`line-item-amount`)
+    const element = this.page.getByTestId(`line-item-amount`)
     if (text !== undefined) {
       await element.waitFor({ state: "visible" })
       await expect(await element.innerText()).toBe(text)
@@ -637,7 +636,9 @@ export class CheckoutPage {
   }
 
   async checkDiscountAmount(text?: string) {
-    const element = await this.page.getByTestId("discount-amount")
+    const element = this.page.locator(
+      `[data-testid=discount-amount] >> text=${text}`
+    )
     if (text !== undefined) {
       await element.waitFor({ state: "visible" })
     } else {
@@ -646,7 +647,7 @@ export class CheckoutPage {
   }
 
   async checkGiftCardAmount(text?: string) {
-    const element = await this.page.locator(
+    const element = this.page.locator(
       `[data-testid=giftcard-amount] >> text=${text}`
     )
     if (text !== undefined) {
@@ -740,13 +741,13 @@ export class CheckoutPage {
   }: {
     type: "adyen-dropin" | "klarna" | "stripe"
     gateway?:
-      | "paypal"
-      | "card"
-      | "card3DS"
-      | "klarna_pay_over_time"
-      | "klarna_pay_later"
-      | "klarna_pay_now"
-      | "klarna"
+    | "paypal"
+    | "card"
+    | "card3DS"
+    | "klarna_pay_over_time"
+    | "klarna_pay_later"
+    | "klarna_pay_now"
+    | "klarna"
     language?: "fr" | "de" | "us"
   }) {
     switch (type) {
