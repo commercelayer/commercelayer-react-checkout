@@ -1,11 +1,11 @@
-import { Order, PaymentMethod, ShippingMethod } from "@commercelayer/sdk"
+import type { Order, PaymentMethod, ShippingMethod } from "@commercelayer/sdk"
 
-import { AppStateData } from "components/data/AppProvider"
+import type { AppStateData } from "components/data/AppProvider"
 import {
-  prepareShipments,
   checkPaymentMethod,
   creditCardPayment,
   hasShippingMethodSet,
+  prepareShipments,
 } from "components/data/AppProvider/utils"
 
 export enum ActionType {
@@ -119,7 +119,7 @@ export function reducer(state: AppStateData, action: Action): AppStateData {
       }
     case ActionType.SET_ADDRESSES: {
       const preparedShipments: ShipmentSelected[] = prepareShipments(
-        action.payload.order.shipments
+        action.payload.order.shipments,
       )
 
       let { hasShippingMethod } = hasShippingMethodSet(preparedShipments)
@@ -177,6 +177,6 @@ export function reducer(state: AppStateData, action: Action): AppStateData {
       }
     }
     default:
-      throw new Error(`Unknown action type`)
+      throw new Error("Unknown action type")
   }
 }

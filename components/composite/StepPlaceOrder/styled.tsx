@@ -44,7 +44,7 @@ const CustomPlaceOrderButton = (props: any) => {
 }
 
 export const StyledPlaceOrderButton = styled(
-  CustomPlaceOrderButton
+  CustomPlaceOrderButton,
 )<StyledPlaceOrderButtonProps>`
   ${ButtonCss}
   ${({ isActive }) => (isActive ? null : tw`md:hidden`)}

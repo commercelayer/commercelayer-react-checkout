@@ -1,12 +1,12 @@
-import { LineItem, Order } from "@commercelayer/sdk"
-import { createContext, useEffect, useContext, useRef } from "react"
+import type { LineItem, Order } from "@commercelayer/sdk"
+import { createContext, useContext, useEffect, useRef } from "react"
 import TagManager from "react-gtm-module"
 
 import { AppContext } from "components/data/AppProvider"
 import type { TypeAccepted } from "components/data/AppProvider/utils"
 import { LINE_ITEMS_SHOPPABLE } from "components/utils/constants"
 
-import { DataLayerItemProps, DataLayerProps } from "./typings"
+import type { DataLayerItemProps, DataLayerProps } from "./typings"
 
 interface GTMProviderData {
   fireAddShippingInfo: (order: Order) => void
@@ -103,7 +103,7 @@ export const GTMProvider: React.FC<GTMProviderProps> = ({
       const lineItems = shipment.stock_line_items?.map(
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        (e) => e && mapItemsToGTM(e.line_item)
+        (e) => e && mapItemsToGTM(e.line_item),
       )
 
       pushDataLayer({

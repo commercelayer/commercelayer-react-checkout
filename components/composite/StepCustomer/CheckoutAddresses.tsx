@@ -3,11 +3,17 @@ import BillingAddressForm from "@commercelayer/react-components/addresses/Billin
 import SaveAddressesButton from "@commercelayer/react-components/addresses/SaveAddressesButton"
 import ShippingAddressForm from "@commercelayer/react-components/addresses/ShippingAddressForm"
 import type { Address, Order } from "@commercelayer/sdk"
-import { useState, Fragment, useEffect, Dispatch, SetStateAction } from "react"
+import {
+  type Dispatch,
+  Fragment,
+  type SetStateAction,
+  useEffect,
+  useState,
+} from "react"
 import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 
-import { ShippingToggleProps } from "components/composite/StepCustomer"
+import type { ShippingToggleProps } from "components/composite/StepCustomer"
 import { ButtonCss, ButtonWrapper } from "components/ui/Button"
 import { SpinnerIcon } from "components/ui/SpinnerIcon"
 import { Toggle } from "components/ui/Toggle"
@@ -74,7 +80,7 @@ export const CheckoutAddresses: React.FC<Props> = ({
       <AddressesContainer shipToDifferentAddress={shipToDifferentAddress}>
         <div className="mt-4">
           <AddressSectionTitle>
-            <>{t(`addressForm.billing_address_title`)}</>
+            <>{t("addressForm.billing_address_title")}</>
           </AddressSectionTitle>
         </div>
         <BillingAddressForm autoComplete="on" errorClassName="hasError">
@@ -90,7 +96,7 @@ export const CheckoutAddresses: React.FC<Props> = ({
             disabled={disabledShipToDifferentAddress}
             data-testid="button-ship-to-different-address"
             data-status={shipToDifferentAddress}
-            label={t(`addressForm.ship_to_different_address`)}
+            label={t("addressForm.ship_to_different_address")}
             checked={shipToDifferentAddress}
             onChange={handleToggleDifferentAddress}
           />
@@ -103,7 +109,7 @@ export const CheckoutAddresses: React.FC<Props> = ({
             errorClassName="hasError"
           >
             <AddressSectionTitle>
-              <>{t(`addressForm.shipping_address_title`)}</>
+              <>{t("addressForm.shipping_address_title")}</>
             </AddressSectionTitle>
             <div className="mt-4">
               <ShippingAddressFormNew shippingAddress={shippingAddressFill} />

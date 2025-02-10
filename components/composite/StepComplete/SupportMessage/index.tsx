@@ -45,7 +45,7 @@ export const SupportMessage: React.FC<Props> = ({
           WrapperPhone: (
             <a
               data-testid="support-phone-link"
-              href={`tel:${supportPhone && supportPhone.replace(/\s+/g, "")}`}
+              href={`tel:${supportPhone?.replace(/\s+/g, "")}`}
             />
           ),
         }}

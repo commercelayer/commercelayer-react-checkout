@@ -7,8 +7,9 @@ export const CheckIcon: React.FC = () => {
       viewBox="0 0 154 154"
       className="icon-order-success"
     >
+      <title>Success icon</title>
       <g fill="none" stroke="#1FDA8A" strokeWidth="2">
-        <circle cx="77" cy="77" r="72" className="circle"></circle>
+        <circle cx="77" cy="77" r="72" className="circle" />
         <circle
           id="colored"
           className="colored_circle"
@@ -16,7 +17,7 @@ export const CheckIcon: React.FC = () => {
           cx="77"
           cy="77"
           r="72"
-        ></circle>
+        />
         <polyline
           className="checkmark"
           stroke="#fff"

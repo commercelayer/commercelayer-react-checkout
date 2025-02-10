@@ -19,7 +19,7 @@ export const useSettingsOrInvalid = (): UseSettingsOrInvalid => {
   const paymentReturn = searchParams.get("paymentReturn")
   const redirectResult = searchParams.get("redirectResult")
   const paymentIntentClientSecret = searchParams.get(
-    "payment_intent_client_secret"
+    "payment_intent_client_secret",
   )
   const [settings, setSettings] = useState<
     CheckoutSettings | InvalidCheckoutSettings | undefined
@@ -28,7 +28,7 @@ export const useSettingsOrInvalid = (): UseSettingsOrInvalid => {
 
   const [savedAccessToken, setAccessToken] = useLocalStorageToken(
     "checkoutAccessToken",
-    accessToken as string
+    accessToken as string,
   )
 
   const isPaymentReturn =

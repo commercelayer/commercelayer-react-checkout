@@ -1,6 +1,6 @@
 import { Errors } from "@commercelayer/react-components/errors/Errors"
-import { useTranslation, Trans } from "next-i18next"
-import { Dispatch, SetStateAction, useEffect } from "react"
+import { Trans, useTranslation } from "next-i18next"
+import { type Dispatch, type SetStateAction, useEffect } from "react"
 
 interface Props {
   messages: Parameters<typeof Errors>[0]["messages"]

@@ -10,23 +10,23 @@ import TaxesAmount from "@commercelayer/react-components/orders/TaxesAmount"
 import TotalAmount from "@commercelayer/react-components/orders/TotalAmount"
 import { Trans, useTranslation } from "react-i18next"
 
-import { AppProviderData } from "components/data/AppProvider"
+import type { AppProviderData } from "components/data/AppProvider"
 import { LINE_ITEMS_SHOPPABLE } from "components/utils/constants"
 
 import { CouponOrGiftCard } from "./CouponOrGiftCard"
 import { LineItemTypes } from "./LineItemTypes"
 import { ReturnToCart } from "./ReturnToCart"
 import {
+  AmountSpacer,
+  AmountWrapper,
+  RecapLine,
+  RecapLineItem,
+  RecapLineItemTotal,
+  RecapLineTotal,
   SummaryHeader,
   SummarySubTitle,
   SummaryTitle,
-  AmountWrapper,
   TotalWrapper,
-  AmountSpacer,
-  RecapLine,
-  RecapLineTotal,
-  RecapLineItemTotal,
-  RecapLineItem,
   Wrapper,
 } from "./styled"
 

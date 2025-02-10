@@ -1,12 +1,12 @@
 import "@adyen/adyen-web/styles/adyen.css"
 import {
-  PaymentSourceBrandName,
-  PaymentSourceDetail,
+  type PaymentMethodOnClickParams,
   PaymentSource,
   PaymentSourceBrandIcon,
-  PaymentMethodOnClickParams,
+  PaymentSourceBrandName,
+  PaymentSourceDetail,
 } from "@commercelayer/react-components"
-import { PaymentMethod as PaymentMethodType } from "@commercelayer/sdk"
+import type { PaymentMethod as PaymentMethodType } from "@commercelayer/sdk"
 import classNames from "classnames"
 import { useContext, useEffect, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
@@ -109,7 +109,6 @@ export const StepPayment: React.FC = () => {
 
   const selectPayment = ({ payment, order }: PaymentMethodOnClickParams) => {
     if (
-      order?.payment_source &&
       // @ts-expect-error available only on adyen
       order?.payment_source.payment_methods &&
       // @ts-expect-error available only on adyen

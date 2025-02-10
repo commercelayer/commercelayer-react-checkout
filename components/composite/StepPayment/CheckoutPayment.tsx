@@ -4,9 +4,9 @@ import { PaymentDetails } from "./PaymentDetails"
 import { PaymentSkeleton } from "./PaymentSkeleton"
 import { PaymentSummaryList } from "./PaymentSummaryList"
 import {
-  PaymentWrapper,
-  PaymentSourceContainer,
   PaymentDetailsWrapper,
+  PaymentSourceContainer,
+  PaymentWrapper,
 } from "./styled"
 
 interface Props {

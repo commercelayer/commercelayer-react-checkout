@@ -3,7 +3,7 @@ import Document, {
   Main,
   NextScript,
   Head,
-  DocumentContext,
+  type DocumentContext,
 } from "next/document"
 import Script from "next/script"
 

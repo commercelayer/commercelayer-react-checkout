@@ -6,14 +6,14 @@ import { useState } from "react"
 import { useTranslation } from "react-i18next"
 
 import {
-  CouponFormWrapper,
   CouponFieldWrapper,
+  CouponFormWrapper,
   CouponName,
   CouponRecap,
-  StyledGiftCardOrCouponRemoveButton,
-  StyledGiftCardOrCouponInput,
-  StyledGiftCardOrCouponSubmit,
   StyledErrors,
+  StyledGiftCardOrCouponInput,
+  StyledGiftCardOrCouponRemoveButton,
+  StyledGiftCardOrCouponSubmit,
 } from "./styled"
 
 interface Props {

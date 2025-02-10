@@ -4,8 +4,7 @@
 
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
+    "biomejs.biome",
     "bradlc.vscode-tailwindcss",
     "stylelint.vscode-stylelint",
     "ms-playwright.playwright"

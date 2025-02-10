@@ -12,7 +12,8 @@ export const Wrapper = styled.div`
 export const Text = styled.p`
   ${tw`p-4 text-sm font-normal text-gray-500`}
 `
-export const Error = styled.div`
+
+export const StyledError = styled.div`
   ${tw`flex flex-col items-center md:(flex-row)`}
 `
 export const ErrorCode = styled.p`

@@ -9,8 +9,8 @@ export default function useDeviceDetect() {
     console.log(window.navigator.userAgent)
     const mobile = Boolean(
       userAgent.match(
-        /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
-      )
+        /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i,
+      ),
     )
     setMobile(mobile)
   }, [])

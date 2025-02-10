@@ -96,8 +96,9 @@ export const StepCustomer: React.FC<Props> = () => {
     setCustomerEmail,
   } = appCtx
 
-  const [shipToDifferentAddress, setShipToDifferentAddress] =
-    useState(!hasSameAddresses)
+  const [shipToDifferentAddress, setShipToDifferentAddress] = useState(
+    !hasSameAddresses,
+  )
 
   useEffect(() => {
     setShipToDifferentAddress(!hasSameAddresses)
@@ -109,7 +110,7 @@ export const StepCustomer: React.FC<Props> = () => {
         shippingCountryCodeLock &&
         billingAddress?.country_code &&
         billingAddress?.country_code !== shippingCountryCodeLock
-      )
+      ),
     )
 
   const openShippingAddress = ({

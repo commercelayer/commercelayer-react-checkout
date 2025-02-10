@@ -1,4 +1,4 @@
-import { NextPage } from "next"
+import type { NextPage } from "next"
 import { useTranslation } from "react-i18next"
 
 import { ErrorContainer } from "components/composite/ErrorContainer"

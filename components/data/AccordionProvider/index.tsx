@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useEffect, useState } from "react"
 
 import { checkIfCannotGoNext } from "components/hooks/useActiveStep"
 
@@ -12,7 +12,7 @@ interface AccordionProviderData {
 }
 
 export const AccordionContext = createContext<AccordionProviderData | null>(
-  null
+  null,
 )
 
 interface AccordionProviderProps {
@@ -40,14 +40,14 @@ export const AccordionProvider: React.FC<AccordionProviderProps> = ({
   // state to disable pointer on open accordion if cannot progress
   const [cannotGoNext, setCannotGoNext] = useState(true)
   const [status, setStatus] = useState<"done" | "edit" | "disabled" | "skip">(
-    "disabled"
+    "disabled",
   )
 
   const setStep = () => {
-    setActiveStep && setActiveStep(step)
+    setActiveStep?.(step)
   }
 
-  const closeStep = () => setActiveStep && setActiveStep(lastActivableStep)
+  const closeStep = () => setActiveStep?.(lastActivableStep)
 
   useEffect(() => {
     setIsActive(step === activeStep)

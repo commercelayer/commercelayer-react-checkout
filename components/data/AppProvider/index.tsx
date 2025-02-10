@@ -1,18 +1,18 @@
 import {
   CommerceLayer,
-  type ShippingMethod as ShippingMethodCollection,
-  type PaymentMethod,
   type Order,
+  type PaymentMethod,
+  type ShippingMethod as ShippingMethodCollection,
 } from "@commercelayer/sdk"
 import { changeLanguage } from "i18next"
 import { createContext, useEffect, useReducer, useRef, useState } from "react"
 
 import { ActionType, reducer } from "components/data/AppProvider/reducer"
 import {
+  type FetchOrderByIdResponse,
   calculateSettings,
   checkAndSetDefaultAddressForOrder,
   fetchOrder,
-  FetchOrderByIdResponse,
 } from "components/data/AppProvider/utils"
 
 export interface AppProviderData extends FetchOrderByIdResponse {
@@ -133,7 +133,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
       order,
       isShipmentRequired,
       isGuest,
-      undefined
+      undefined,
     )
 
     dispatch({
@@ -168,7 +168,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
       // FIX We are using customer addresses saved in reducer because
       // we don't receive them from fetchOrder
       isGuest,
-      state.customerAddresses
+      state.customerAddresses,
     )
     setTimeout(() => {
       dispatch({
@@ -190,7 +190,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
         currentOrder,
         state.isShipmentRequired,
         isGuest,
-        state.customerAddresses
+        state.customerAddresses,
       )
       setTimeout(() => {
         dispatch({
@@ -215,7 +215,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
       currentOrder,
       state.isShipmentRequired,
       isGuest,
-      state.customerAddresses
+      state.customerAddresses,
     )
 
     dispatch({
@@ -239,7 +239,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
       currentOrder,
       state.isShipmentRequired,
       isGuest,
-      state.customerAddresses
+      state.customerAddresses,
     )
     setTimeout(() => {
       dispatch({
@@ -258,7 +258,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
       currentOrder,
       state.isShipmentRequired,
       isGuest,
-      state.customerAddresses
+      state.customerAddresses,
     )
 
     setTimeout(() => {
@@ -282,7 +282,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
       currentOrder,
       state.isShipmentRequired,
       isGuest,
-      state.customerAddresses
+      state.customerAddresses,
     )
 
     dispatch({

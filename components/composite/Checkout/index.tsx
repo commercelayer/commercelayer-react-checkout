@@ -16,14 +16,14 @@ import {
 } from "components/composite/StepCustomer"
 import { StepNav } from "components/composite/StepNav"
 import {
-  StepPayment,
   StepHeaderPayment,
+  StepPayment,
 } from "components/composite/StepPayment"
 import { PaymentContainer } from "components/composite/StepPayment/PaymentContainer"
 import StepPlaceOrder from "components/composite/StepPlaceOrder"
 import {
-  StepShipping,
   StepHeaderShipping,
+  StepShipping,
 } from "components/composite/StepShipping"
 import { AccordionProvider } from "components/data/AccordionProvider"
 import { AppContext } from "components/data/AppProvider"

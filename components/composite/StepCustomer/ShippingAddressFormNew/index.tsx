@@ -1,4 +1,4 @@
-import { Address } from "@commercelayer/sdk"
+import type { Address } from "@commercelayer/sdk"
 import { Fragment } from "react"
 import styled from "styled-components"
 import tw from "twin.macro"

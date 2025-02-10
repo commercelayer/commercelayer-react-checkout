@@ -1,4 +1,4 @@
-import Errors from "@commercelayer/react-components/errors/Errors"
+import type Errors from "@commercelayer/react-components/errors/Errors"
 import LineItem from "@commercelayer/react-components/line_items/LineItem"
 import LineItemImage from "@commercelayer/react-components/line_items/LineItemImage"
 import LineItemName from "@commercelayer/react-components/line_items/LineItemName"
@@ -18,12 +18,12 @@ import type {
   ShippingMethod as ShippingMethodCollection,
 } from "@commercelayer/sdk"
 import classNames from "classnames"
-import { useTranslation, Trans } from "next-i18next"
-import { useContext, useState, useEffect } from "react"
+import { Trans, useTranslation } from "next-i18next"
+import { useContext, useEffect, useState } from "react"
 
 import { AccordionContext } from "components/data/AccordionProvider"
 import { AppContext } from "components/data/AppProvider"
-import { TypeAccepted } from "components/data/AppProvider/utils"
+import type { TypeAccepted } from "components/data/AppProvider/utils"
 import { GTMContext } from "components/data/GTMProvider"
 import { Button, ButtonWrapper } from "components/ui/Button"
 import { GridContainer } from "components/ui/GridContainer"
@@ -36,15 +36,15 @@ import { LINE_ITEMS_SHIPPABLE } from "components/utils/constants"
 import { NoShippingMethods } from "./Errors/NoShippingMethods"
 import { OutOfStock } from "./Errors/OutOfStock"
 import {
-  ShippingWrapper,
-  ShippingTitle,
+  ShippingLineItem,
+  ShippingLineItemDescription,
+  ShippingLineItemQty,
+  ShippingLineItemTitle,
   ShippingSummary,
   ShippingSummaryItemDescription,
   ShippingSummaryValue,
-  ShippingLineItem,
-  ShippingLineItemDescription,
-  ShippingLineItemTitle,
-  ShippingLineItemQty,
+  ShippingTitle,
+  ShippingWrapper,
   StyledShippingMethodRadioButton,
 } from "./styled"
 
@@ -81,9 +81,8 @@ export const StepHeaderShipping: React.FC<HeaderProps> = ({ step }) => {
         return appCtx.shippingMethodName
       }
       return t("stepShipping.methodSelected", { count: shipments.length })
-    } else {
-      return t("stepShipping.methodUnselected")
     }
+    return t("stepShipping.methodUnselected")
   }
 
   return (
@@ -133,7 +132,7 @@ export const StepShipping: React.FC<Props> = () => {
   useEffect(() => {
     if (shipments.length > 0) {
       setCanContinue(
-        !shipments?.map((s) => s.shippingMethodId).includes(undefined)
+        !shipments?.map((s) => s.shippingMethodId).includes(undefined),
       )
     }
   }, [shipments])
@@ -212,7 +211,7 @@ export const StepShipping: React.FC<Props> = () => {
                                     {(props) => {
                                       const index = shipments.findIndex(
                                         (item) =>
-                                          item.shipmentId === props.shipment.id
+                                          item.shipmentId === props.shipment.id,
                                       )
 
                                       return (
@@ -281,10 +280,10 @@ export const StepShipping: React.FC<Props> = () => {
                                               <ShippingMethodPrice
                                                 data-testid="shipping-method-price"
                                                 labelFreeOver={t(
-                                                  "general.free"
+                                                  "general.free",
                                                 )}
                                                 labelExternal={t(
-                                                  "stepShipping.externalPrice"
+                                                  "stepShipping.externalPrice",
                                                 )}
                                               />
                                             </ShippingSummaryValue>

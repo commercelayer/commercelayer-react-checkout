@@ -10,8 +10,8 @@
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "lint": "eslint ./ --ext .js,.jsx,.tsx,.ts",
-    "lint:fix": "eslint ./ --ext .tsx,.ts --fix",
+    "lint": "pnpm biome check @typings components pages",
+    "lint:fix": "pnpm biome check @typings components pages --write",
     "test": "playwright test",
     "test:debug": "PWDEBUG=1 playwright test",
     "test:ui": "NEXT_PUBLIC_BASE_PATH=http://localhost:3000 playwright test --ui",
@@ -111,6 +111,7 @@
     "typescript": "^5.7.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",

@@ -2,10 +2,10 @@ import { PaymentMethodPrice } from "@commercelayer/react-components"
 
 import { PaymentMethodNameWithStripe } from "../PaymentMethodNameWithStripe"
 import {
+  PaymentRadioContainer,
   PaymentSummary,
   PaymentSummaryItem,
   PaymentSummaryValue,
-  PaymentRadioContainer,
   StyledPaymentMethodRadioButton,
 } from "../styled"
 

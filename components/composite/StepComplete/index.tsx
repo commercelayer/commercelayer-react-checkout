@@ -3,7 +3,7 @@ import PaymentSourceBrandIcon from "@commercelayer/react-components/payment_sour
 import PaymentSourceBrandName from "@commercelayer/react-components/payment_source/PaymentSourceBrandName"
 import PaymentSourceDetail from "@commercelayer/react-components/payment_source/PaymentSourceDetail"
 import { useContext, useEffect } from "react"
-import { useTranslation, Trans } from "react-i18next"
+import { Trans, useTranslation } from "react-i18next"
 
 import { OrderSummary } from "components/composite/OrderSummary"
 import { PaymentContainer } from "components/composite/StepPayment/PaymentContainer"
@@ -18,6 +18,7 @@ import { Logo } from "components/ui/Logo"
 import { getTranslations } from "components/utils/payments"
 
 import { CheckIcon } from "./CheckIcon"
+import { SupportMessage } from "./SupportMessage"
 import {
   AddressContainer,
   Bottom,
@@ -31,13 +32,12 @@ import {
   RecapItemTitle,
   RecapSummary,
   RecapTitle,
+  Text,
   Title,
   Top,
-  Text,
   Wrapper,
   WrapperButton,
 } from "./styled"
-import { SupportMessage } from "./SupportMessage"
 
 interface Props {
   logoUrl: NullableType<string>
@@ -71,7 +71,9 @@ export const StepComplete: React.FC<Props> = ({
   if (!ctx) return null
 
   const handleClick = () => {
-    ctx?.returnUrl && (document.location.href = ctx?.returnUrl)
+    if (ctx?.returnUrl) {
+      document.location.href = ctx?.returnUrl
+    }
   }
 
   return (

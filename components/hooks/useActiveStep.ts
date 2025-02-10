@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 
 import { AppContext } from "components/data/AppProvider"
 
@@ -15,7 +15,7 @@ const STEPS: SingleStepEnum[] = ["Customer", "Shipping", "Payment"]
 export function checkIfCannotGoNext(
   step: SingleStepEnum,
   steps: SingleStepEnum[],
-  lastActivableStep: SingleStepEnum
+  lastActivableStep: SingleStepEnum,
 ) {
   if (lastActivableStep === "Complete") {
     return false

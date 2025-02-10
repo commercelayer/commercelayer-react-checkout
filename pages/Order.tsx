@@ -1,4 +1,4 @@
-import { NextPage } from "next"
+import type { NextPage } from "next"
 import dynamic from "next/dynamic"
 
 import CheckoutSkeleton from "components/composite/CheckoutSkeleton"
@@ -11,7 +11,7 @@ const DynamicCheckoutContainer = dynamic(
     loading: function LoadingSkeleton() {
       return <CheckoutSkeleton />
     },
-  }
+  },
 )
 const DynamicCheckout = dynamic(() => import("components/composite/Checkout"), {
   loading: function LoadingSkeleton() {

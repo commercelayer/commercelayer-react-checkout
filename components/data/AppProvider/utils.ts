@@ -1,21 +1,21 @@
-import {
-  Order,
+import type {
   Address,
-  CustomerAddress,
-  PaymentMethod,
-  CommerceLayerClient,
-  OrderUpdate,
-  StripePayment,
-  WireTransfer,
   AdyenPayment,
   BraintreePayment,
   CheckoutComPayment,
+  CommerceLayerClient,
+  CustomerAddress,
+  Order,
+  OrderUpdate,
+  PaymentMethod,
   PaypalPayment,
-  ShippingMethod,
   Shipment,
+  ShippingMethod,
+  StripePayment,
+  WireTransfer,
 } from "@commercelayer/sdk"
 
-import { AppStateData } from "components/data/AppProvider"
+import type { AppStateData } from "components/data/AppProvider"
 
 export type LineItemType =
   | "gift_cards"
@@ -100,8 +100,8 @@ function isNewAddress({
 
   const hasAddressIntoAddresses = Boolean(
     customerAddresses?.find(
-      (customerAddress) => customerAddress?.id === address?.reference
-    )
+      (customerAddress) => customerAddress?.id === address?.reference,
+    ),
   )
 
   if (
@@ -170,16 +170,16 @@ export async function checkAndSetDefaultAddressForOrder({
       updateObjet,
       {
         include: ["billing_address", "shipping_address"],
-      }
+      },
     )
 
     localStorage.setItem(
       "_save_billing_address_to_customer_address_book",
-      "false"
+      "false",
     )
     localStorage.setItem(
       "_save_shipping_address_to_customer_address_book",
-      "false"
+      "false",
     )
     return {
       customerAddresses: [
@@ -218,7 +218,8 @@ function isBillingAddressSameAsShippingAddress({
       shippingAddress.name === billingAddress.name
     ) {
       return true
-    } else if (
+    }
+    if (
       shippingAddress.reference !== billingAddress.reference ||
       shippingAddress.name !== billingAddress.name
     ) {
@@ -292,7 +293,7 @@ export function isPaymentRequired(order: Order) {
 
 export function calculateAddresses(
   order: Order,
-  addresses: NullableType<CustomerAddress[]>
+  addresses: NullableType<CustomerAddress[]>,
 ): Partial<AppStateData> {
   const cAddresses =
     (addresses || order.customer?.customer_addresses) ?? undefined
@@ -325,13 +326,13 @@ export function calculateSettings(
   order: Order,
   isShipmentRequired: boolean,
   isGuest: boolean,
-  customerAddress?: CustomerAddress[]
+  customerAddress?: CustomerAddress[],
 ) {
   // FIX saving customerAddresses because we don't receive
   // them from fetchOrder
   const calculatedAddresses = calculateAddresses(
     order,
-    order.customer?.customer_addresses || customerAddress
+    order.customer?.customer_addresses || customerAddress,
   )
 
   const hasSubscriptions =
@@ -370,7 +371,7 @@ export function checkPaymentMethod(order: Order) {
   let hasPaymentMethod = Boolean(
     // @ts-expect-error no type for payment_method
     paymentSource?.payment_method?.lenght > 0 ||
-      paymentSource?.payment_response?.source
+      paymentSource?.payment_response?.source,
   )
   const paymentRequired = isPaymentRequired(order)
   if (!hasPaymentMethod && !paymentRequired) {
@@ -403,7 +404,7 @@ export function calculateSelectedShipments(
     shipmentId: string
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     shippingMethod: ShippingMethod | Record<string, any>
-  }
+  },
 ) {
   const shipmentsSelected = shipments?.map((shipment) => {
     return shipment.shipmentId === payload?.shipmentId
@@ -419,7 +420,7 @@ export function calculateSelectedShipments(
 }
 
 export function prepareShipments(
-  shipments?: NullableType<Shipment[]>
+  shipments?: NullableType<Shipment[]>,
 ): ShipmentSelected[] {
   return (shipments || []).map((a) => {
     return {
@@ -432,10 +433,10 @@ export function prepareShipments(
 
 export function hasShippingMethodSet(shipments: ShipmentSelected[]) {
   const shippingMethods = shipments?.map(
-    (a: ShipmentSelected) => a.shippingMethodId
+    (a: ShipmentSelected) => a.shippingMethodId,
   )
   const hasShippingMethod = Boolean(
-    shippingMethods?.length && !shippingMethods?.includes(undefined)
+    shippingMethods?.length && !shippingMethods?.includes(undefined),
   )
   return { hasShippingMethod }
 }

@@ -9,8 +9,9 @@ interface Props {
 export const PaymentContainer = ({ primaryColor, children }: Props) => {
   const { t } = useTranslation()
 
-  const checkoutReturnUrl = `${window.location.href.split("?")[0]
-    }?paymentReturn=true`
+  const checkoutReturnUrl = `${
+    window.location.href.split("?")[0]
+  }?paymentReturn=true`
 
   return (
     <PaymentMethodsContainer
@@ -52,26 +53,31 @@ export const PaymentContainer = ({ primaryColor, children }: Props) => {
                 fontSize: "16px",
                 padding: "12px",
                 fontFamily: "monospace",
-              }
-            }
+              },
+            },
           },
-          onDisableStoredPaymentMethod: async ({ recurringDetailReference, shopperReference }) => {
+          onDisableStoredPaymentMethod: async ({
+            recurringDetailReference,
+            shopperReference,
+          }) => {
             console.log("Stored payment method disabled")
             const res = await fetch("your-server-side-endpoint", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify({ recurringDetailReference, shopperReference }),
+              body: JSON.stringify({
+                recurringDetailReference,
+                shopperReference,
+              }),
             })
             if (res.status === 200) {
               console.log("Stored payment method disabled")
               return true
-            } else {
-              console.error("Error disabling stored payment method")
-              return false
             }
-          }
+            console.error("Error disabling stored payment method")
+            return false
+          },
         },
         braintreePayment: {
           styles: {

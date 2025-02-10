@@ -1,17 +1,10 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
+  "biome.enabled": true,
+  "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
-  // "typescript.referencesCodeLens.enabled": false,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   }
 }
