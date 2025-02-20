@@ -626,7 +626,7 @@ export class CheckoutPage {
   }
 
   async checkLineItemAmount(text?: string) {
-    const element = await this.page.getByTestId(`line-item-amount`)
+    const element = this.page.getByTestId(`line-item-amount`)
     if (text !== undefined) {
       await element.waitFor({ state: "visible" })
       await expect(await element.innerText()).toBe(text)
@@ -636,7 +636,9 @@ export class CheckoutPage {
   }
 
   async checkDiscountAmount(text?: string) {
-    const element = await this.page.getByTestId("discount-amount")
+    const element = this.page.locator(
+      `[data-testid=discount-amount] >> text=${text}`
+    )
     if (text !== undefined) {
       await element.waitFor({ state: "visible" })
     } else {
@@ -645,7 +647,7 @@ export class CheckoutPage {
   }
 
   async checkGiftCardAmount(text?: string) {
-    const element = await this.page.locator(
+    const element = this.page.locator(
       `[data-testid=giftcard-amount] >> text=${text}`
     )
     if (text !== undefined) {
