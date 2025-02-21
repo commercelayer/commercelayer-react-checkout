@@ -53,7 +53,7 @@ export const CheckoutCustomerPayment: React.FC<Props> = ({
               key={k}
               data-testid="customer-card"
               onClick={p.handleClick}
-              className="flex flex-col items-start p-3 mb-4 text-sm border rounded cursor-pointer lg:flex-row lg:items-center shadow-sm hover:border-primary"
+              className="flex flex-col items-start p-3 mb-4 text-sm border rounded cursor-pointer lg:flex-row lg:items-center shadow-sm hover:border-gray-400"
             >
               <PaymentSourceProvider value={{ ...p.card }}>
                 <PaymentDetails />

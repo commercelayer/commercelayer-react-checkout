@@ -33,8 +33,9 @@ export class CheckoutPage {
   }
 
   async goto({ orderId, token }: GoToProps) {
-    const url = `${process.env.NEXT_PUBLIC_BASE_PATH || ""
-      }/${orderId}?accessToken=${token}`
+    const url = `${
+      process.env.NEXT_PUBLIC_BASE_PATH || ""
+    }/${orderId}?accessToken=${token}`
 
     await this.page.route("**/api/organization**", (route) => {
       // // Add a prefix to the title.
@@ -186,8 +187,9 @@ export class CheckoutPage {
       | "purchase"
   ) {
     await this.page.waitForTimeout(2000)
-    const dataLayer: DataLayerWindowProps[] =
-      await this.page.evaluate("window.dataLayer")
+    const dataLayer: DataLayerWindowProps[] = await this.page.evaluate(
+      "window.dataLayer"
+    )
     return (
       dataLayer &&
       dataLayer.filter(
@@ -242,6 +244,17 @@ export class CheckoutPage {
   async isVisibleShipToDifferentAddress(visible: boolean) {
     const element = this.page.locator(
       "[data-testid=button-ship-to-different-address]"
+    )
+    if (visible) {
+      await expect(element).toBeVisible()
+    } else {
+      await expect(element).toBeHidden()
+    }
+  }
+
+  async isVisibleBillingInfo(visible: boolean) {
+    const element = this.page.locator(
+      "[data-testid=input_billing_address_billing_info]"
     )
     if (visible) {
       await expect(element).toBeVisible()
@@ -474,10 +487,10 @@ export class CheckoutPage {
       }
       const fieldType =
         key === "country_code" ||
-          (key === "state_code" &&
-            address.country_code &&
-            // TODO Adjust to check for select or input
-            ["IT", "US"].includes(address.country_code))
+        (key === "state_code" &&
+          address.country_code &&
+          // TODO Adjust to check for select or input
+          ["IT", "US"].includes(address.country_code))
           ? "select"
           : "input"
       const element = this.page.locator(`${fieldType}[name=${type}_${key}]`)
@@ -739,13 +752,13 @@ export class CheckoutPage {
   }: {
     type: "adyen-dropin" | "klarna" | "stripe"
     gateway?:
-    | "paypal"
-    | "card"
-    | "card3DS"
-    | "klarna_pay_over_time"
-    | "klarna_pay_later"
-    | "klarna_pay_now"
-    | "klarna"
+      | "paypal"
+      | "card"
+      | "card3DS"
+      | "klarna_pay_over_time"
+      | "klarna_pay_later"
+      | "klarna_pay_now"
+      | "klarna"
     language?: "fr" | "de" | "us"
   }) {
     switch (type) {

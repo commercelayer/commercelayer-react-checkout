@@ -1,5 +1,4 @@
 {
-
     "general": {
         "title": "{{companyName}} - Checkout",
         "systemError": "Siamo spiacenti ma qualcosa è andato storto!",
@@ -7,22 +6,20 @@
         "retry_error_description": "Prova a ricaricare la pagina",
         "invalid": "Quest'ordine non è accessibile.",
         "edit": "Modifica",
-        "free" : "Gratis",
+        "free": "Gratis",
         "apply": "Applica",
         "privacy_and_terms": "Spuntando la casella accetti i <bold><termsUrl>termini</termsUrl></bold> e la <bold><privacyUrl>privacy</privacyUrl></bold>.",
         "checkoutTitle": "Checkout"
     },
-
     "error": {
         "general": "Errore generale",
         "shipments": "Alcune spedizioni mancano del metodo di spedizione",
         "paymentMethod": "Lo step del pagamento non può rimanere vuoto",
         "transition": "La transizione non è consentita",
-        "payer": "Non è stato approvato il pagamento",  
+        "payer": "Non è stato approvato il pagamento",
         "resourceID": "L'ID della risorsa richiesto non è stato trovato"
     },
-
-    "input":{
+    "input": {
         "cantBlank": "Non può essere vuoto",
         "mustBeValidFormat": "Deve essere un formato valido",
         "mustBeValidEmail": "Deve essere un indirizzo email valido",
@@ -30,7 +27,6 @@
         "mustBeValidCoupon": "Non corrisponde ad un coupon attivo",
         "mustBeValidGiftCard": "Non corrisponde ad una carta regalo attiva"
     },
-
     "orderRecap": {
         "order_summary": "Riepilogo ordine",
         "cartContains": "Il tuo carrello contiene {{count}} articolo",
@@ -66,7 +62,6 @@
         "frequency.six-month": "Ogni sei mesi",
         "frequency.yearly": "Annuale"
     },
-
     "stepCustomer": {
         "title": "Cliente",
         "addNewAddress": "Aggiungi nuovo indirizzo",
@@ -76,7 +71,6 @@
         "notSetNoDelivery": "Inserisci il tuo indirizzo di fatturazione",
         "closeForm": "Scegli indirizzo"
     },
-
     "stepShipping": {
         "title": "Consegna",
         "shipment": "Spedizione <Wrap>{{current}} di {{total}}</Wrap>",
@@ -88,17 +82,16 @@
         "methodSelected": "Il tuo ordine contiene {{count}} spedizione",
         "methodSelected_other": "Il tuo ordine contiene {{count}} spedizioni",
         "methodUnselected": "Seleziona un metodo di spedizione",
-        "deliveryLeadTime" : "<0/> - <1/> giorni",
+        "deliveryLeadTime": "<0/> - <1/> giorni",
         "externalPrice": "Prezzo dopo la selezione",
         "continueToPayment": "Continuare al pagamento",
         "notRequired": "Questo ordine non necessita di spedizione"
     },
-
     "stepPayment": {
         "title": "Pagamento",
         "methodUnselected": "Seleziona un metodo di pagamento",
         "creditCard": "Carta di credito",
-        "wireTransfer": "Bonifico bancario",
+        "wireTransfer": "Pagamento manuale",
         "wireTransferDescription": "Dopo la conferma dell'ordine riceverai le istruzioni per completare il pagamento",
         "paypalDescription": "Dopo aver effettuato l'ordine, sarai reindirizzato verso il sito PayPal per accedere e autorizzare il pagamento",
         "endingIn": "<0/> finisce con <1/>",
@@ -110,9 +103,8 @@
         "subscriptionWithoutCustomer": "Crea un account prima di procedere con il tuo acquisto periodico.",
         "subscriptionWithCustomer": "Ciascun ordine periodico verrà addebitato sulla carta fornita, come indicato nelle condizioni di vendita."
     },
-
-    "addressForm" : {
-        "customer_email" : "La tua email",
+    "addressForm": {
+        "customer_email": "La tua email",
         "billing_address_title": "Indirizzo di fatturazione",
         "billing_address_first_name": "Nome",
         "billing_address_last_name": "Cognome",
@@ -140,7 +132,6 @@
         "shipping_address_zip_code": "CAP",
         "shipping_address_phone": "Telefono"
     },
-
     "stepComplete": {
         "title": "Grazie per il tuo acquisto!",
         "description": "Ordine <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
@@ -156,5 +147,4 @@
         "email": "E-mail:",
         "free_payment": "Questo ordine non richiede un pagamento"
     }
-
 }

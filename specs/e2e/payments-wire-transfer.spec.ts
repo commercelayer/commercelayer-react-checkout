@@ -37,11 +37,11 @@ test.describe("guest with wire transfer", () => {
 
     await checkoutPage.save("Payment")
 
-    await checkoutPage.checkPaymentRecap("Wire transfer")
+    await checkoutPage.checkPaymentRecap("Manual payment")
 
     await checkoutPage.page.reload()
 
-    await checkoutPage.checkPaymentRecap("Wire transfer")
+    await checkoutPage.checkPaymentRecap("Manual payment")
   })
 
   test("Change method and checkout", async ({ checkoutPage }) => {

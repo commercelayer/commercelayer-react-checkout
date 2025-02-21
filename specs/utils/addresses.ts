@@ -13,6 +13,18 @@ export const euAddress: Partial<Address> = {
   billing_info: "ABCDEFGHIJKLMNOPQRSTUVWYXZ",
 }
 
+export const euAddressNoBillingInfo: Partial<Address> = {
+  first_name: "Darth",
+  last_name: "Vader",
+  line_1: "Via Morte Nera, 13",
+  line_2: "Ragnatela, 99",
+  city: "Cogorno",
+  country_code: "IT",
+  state_code: "GE",
+  zip_code: "16030",
+  phone: "+39 055 1234567890"
+}
+
 export const euAddress2: Partial<Address> = {
   first_name: "Spider",
   last_name: "Man",

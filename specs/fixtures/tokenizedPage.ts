@@ -59,7 +59,7 @@ interface DefaultParamsProps {
   token?: string
   orderId?: string
   order?: OrderType
-  market?: "EU" | "US" | "MI" | "IT"
+  market?: "EU" | "US" | "MI" | "IT" | "IE"
   customer?: {
     email: string
     password: string
@@ -99,7 +99,7 @@ type FixtureType = {
 }
 
 const getToken = async (
-  market?: "US" | "EU" | "MI" | "IT",
+  market?: "US" | "EU" | "MI" | "IT" | "IE",
   customerId?: string
 ) => {
   const scope = market != null ? `market:code:${market}` : "market:code:EU"
@@ -141,7 +141,7 @@ const getCustomerUserToken = async ({
 }: {
   email: string
   password: string
-  market?: "EU" | "US" | "MI" | "IT"
+  market?: "EU" | "US" | "MI" | "IT" | "IE"
 }) => {
   const token = await getSuperToken()
   const cl = getClient(token)

@@ -91,7 +91,7 @@
     "title": "Pagamento",
     "methodUnselected": "Selecione um método de pagamento",
     "creditCard": "Cartão de crédito",
-    "wireTransfer": "Transferência bancária",
+    "wireTransfer": "Pagamento manual",
     "wireTransferDescription": "Após a confirmação da encomenda, receberá instruções para concluir o pagamento.",
     "paypalDescription": "Após colocar a encomenda, será redirecionado para o website do PayPal para iniciar sessão e autorizar o pagamento",
     "endingIn": "<0/> terminando em <1/>",

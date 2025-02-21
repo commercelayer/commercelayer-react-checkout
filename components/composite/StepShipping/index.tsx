@@ -252,7 +252,7 @@ export const StepShipping: React.FC<Props> = () => {
                                           props?.deliveryLeadTimeForShipment
                                         return (
                                           <label
-                                            className="flex flex-col p-3 border rounded cursor-pointer hover:border-primary transition duration-200 ease-in peer-checked:border-2 peer-checked:border-primary peer-checked:shadow-md peer-checked:bg-gray-50"
+                                            className="flex flex-col p-3 border rounded cursor-pointer hover:border-gray-400 transition duration-200 ease-in peer-checked:border-2 peer-checked:border-primary peer-checked:shadow-md peer-checked:bg-gray-50"
                                             htmlFor={props.htmlFor}
                                           >
                                             <ShippingLineItemTitle>

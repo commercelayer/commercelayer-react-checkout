@@ -1,5 +1,4 @@
 {
-    
     "general": {
         "title": "{{companyName}} - Commande",
         "systemError": "Nous sommes désolés, mais il y a eu un problème.",
@@ -7,12 +6,11 @@
         "retry_error_description": "Essayez de recharger la page",
         "invalid": "Cette commande n’est pas accessible.",
         "edit": "Éditer",
-        "free" : "Gratuit",
+        "free": "Gratuit",
         "apply": "Appliquer",
         "privacy_and_terms": "En cliquant sur la case à cocher, vous acceptez <bold><termsUrl>les conditions générales de ventes</termsUrl></bold> et <bold><privacyUrl>la politique de confidentialité des données personnelles</privacyUrl></bold>.",
         "checkoutTitle": "Commande"
     },
-
     "error": {
         "general": "Erreur système",
         "shipments": "Certains envois ne comportent pas de méthode d’expédition",
@@ -21,8 +19,7 @@
         "payer": "Le payeur n’a pas approuvé le paiement",
         "resourceID": "L’identifiant de la ressource demandée n’a pas été trouvé"
     },
-
-    "input":{
+    "input": {
         "cantBlank": "Ne peut pas être vide",
         "mustBeValidFormat": "Format non valide",
         "mustBeValidEmail": "Veuillez saisir une adressse de courriel valide",
@@ -30,7 +27,6 @@
         "mustBeValidCoupon": "Veuillez saisir un bon de réduction valide.",
         "mustBeValidGiftCard": "Veuillez saisir une carte cadeau valide"
     },
-
     "orderRecap": {
         "order_summary": "Résumé de la commande",
         "cartContains": "Votre panier contient {{count}} article",
@@ -66,7 +62,6 @@
         "frequency.six-month": "Tous les six mois",
         "frequency.yearly": "Chaque année"
     },
-
     "stepCustomer": {
         "title": "Client",
         "addNewAddress": "Ajouter une adresse",
@@ -76,7 +71,6 @@
         "notSetNoDelivery": "Remplir votre adresse de facturation",
         "closeForm": "Choisir cette adresse"
     },
-
     "stepShipping": {
         "title": "Livraison",
         "shipment": "Expédition <Wrap>{{current}} of {{total}}</Wrap>",
@@ -88,17 +82,16 @@
         "methodSelected": "Votre commande contient {{count}} expédition",
         "methodSelected_other": "Votre commande contient {{count}} expéditions",
         "methodUnselected": "Choisir un mode de livraison",
-        "deliveryLeadTime" : "<0/> - <1/> jours",
+        "deliveryLeadTime": "<0/> - <1/> jours",
         "externalPrice": "À la prochaine étape",
         "continueToPayment": "Poursuivre vers le paiement",
         "notRequired": "Cette commande ne nécessite pas d’expédition"
     },
-
     "stepPayment": {
         "title": "Paiement",
         "methodUnselected": "Choisir un mode de paiement",
         "creditCard": "Carte bancaire",
-        "wireTransfer": "Virement bancaire",
+        "wireTransfer": "Paiement manuel",
         "wireTransferDescription": "Lors de la confirmation de la commande, vous recevrez des instructions pour effectuer le paiement.",
         "paypalDescription": "Après avoir passé la commande, vous serez redirigé vers le site web de PayPal pour vous connecter et autoriser le paiement.",
         "endingIn": "<0/> se terminant par <1/>",
@@ -110,9 +103,8 @@
         "subscriptionWithoutCustomer": "Un compte doit être créé pour pouvoir acheter par abonnement.",
         "subscriptionWithCustomer": "En fournissant les informations relatives à votre carte, vous autorisez l’entreprise à débiter votre carte pour les paiements futurs, conformément à ses conditions."
     },
-
-    "addressForm" : {
-        "customer_email" : "Votre courriel",
+    "addressForm": {
+        "customer_email": "Votre courriel",
         "billing_address_title": "Adresse de facturation",
         "billing_address_first_name": "Prénom",
         "billing_address_last_name": "Nom",
@@ -140,7 +132,6 @@
         "shipping_address_zip_code": "Code postal",
         "shipping_address_phone": "Téléphone"
     },
-
     "stepComplete": {
         "title": "Merci pour votre commande !",
         "description": "Numéro de commande : <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
@@ -156,5 +147,4 @@
         "email": "Courriel :",
         "free_payment": "Cette commande ne nécessite pas de paiement"
     }
-
 }

@@ -368,11 +368,7 @@ export function checkPaymentMethod(order: Order) {
 
   const paymentSource: PaymentSourceType | undefined =
     order.payment_source as PaymentSourceType
-  let hasPaymentMethod = Boolean(
-    // @ts-expect-error no type for payment_method
-    paymentSource?.payment_method?.lenght > 0 ||
-      paymentSource?.payment_response?.source,
-  )
+  let hasPaymentMethod = Boolean(paymentSource?.payment_response?.source)
   const paymentRequired = isPaymentRequired(order)
   if (!hasPaymentMethod && !paymentRequired) {
     hasPaymentMethod = true

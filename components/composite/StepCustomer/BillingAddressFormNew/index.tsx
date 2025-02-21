@@ -29,6 +29,7 @@ export const BillingAddressFormNew: React.FC<Props> = ({
   const countries = settings?.config?.checkout?.billing_countries
   const states = settings?.config?.checkout?.billing_states
   const defaultCountry = settings?.config?.checkout?.default_country
+  const optionalBillingInfo = settings?.config?.checkout?.optional_billing_info
 
   return (
     <Wrapper>
@@ -97,10 +98,11 @@ export const BillingAddressFormNew: React.FC<Props> = ({
         type="tel"
         value={billingAddress?.phone || ""}
       />
-      {requiresBillingInfo && (
+      {(requiresBillingInfo || optionalBillingInfo) && (
         <AddressInputGroup
           fieldName="billing_address_billing_info"
           resource="billing_address"
+          required={!!requiresBillingInfo}
           type="text"
           value={billingAddress?.billing_info || ""}
         />

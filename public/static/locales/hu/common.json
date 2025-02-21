@@ -91,7 +91,7 @@
     "title": "Fizetés",
     "methodUnselected": "Válasszon fizetési módot",
     "creditCard": "Bankkártya",
-    "wireTransfer": "Átutalás",
+    "wireTransfer": "Manuális fizetés",
     "wireTransferDescription": "A rendelés megerősítése után utasításokat fog kapni a fizetés befejezéséhez.",
     "paypalDescription": "A rendelés megerősítése után, átirányításra kerül a PayPal honlapjára, hogy megerősítse a fizetést",
     "endingIn": "<0/> végződik <1/>",

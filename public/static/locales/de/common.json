@@ -1,5 +1,4 @@
 {
-
     "general": {
         "title": "{{companyName}} - Zur Bezahlung",
         "systemError": "Es tut uns leid, aber irgendetwas ist schief gegangen!",
@@ -12,7 +11,6 @@
         "privacy_and_terms": "Durch Anklicken des Kontrollkästchens erklärst Du Dich mit den <bold><termsUrl>Geschäftsbedingungen</termsUrl></bold> und dem <bold><privacyUrl>Datenschutz</privacyUrl></bold> einverstanden.",
         "checkoutTitle": "Bezahlung"
     },
-  
     "error": {
         "general": "Allgemeiner Fehler",
         "shipments": "Bei einigen Sendungen fehlt die Versandart.",
@@ -21,7 +19,6 @@
         "payer": "Die Zahlung wurde nicht genehmigt",
         "resourceID": "Die angeforderte Ressourcen-ID wurde nicht gefunden"
     },
-  
     "input": {
         "cantBlank": "Darf nicht leer sein",
         "mustBeValidFormat": "Muss ein gültiges Format sein",
@@ -30,7 +27,6 @@
         "mustBeValidCoupon": "Bitte gib einen gültigen Rabattcode an.",
         "mustBeValidGiftCard": "Bitte gib einen gültigen Geschenkgutschein an"
     },
-  
     "orderRecap": {
         "order_summary": "Bestellübersicht",
         "cartContains": "Dein Einkaufswagen enthält {{count}} Artikel.",
@@ -66,7 +62,6 @@
         "frequency.six-month": "Every six months",
         "frequency.yearly": "Yearly"
     },
-  
     "stepCustomer": {
         "title": "Adresse",
         "addNewAddress": "Neue Adresse hinzufügen",
@@ -76,7 +71,6 @@
         "notSetNoDelivery": "Gib Seine Rechnungsadresse ein",
         "closeForm": "Adresse auswählen"
     },
-  
     "stepShipping": {
         "title": "Versand",
         "shipment": "Versand <Wrap>{{current}} von {{total}}</Wrap>",
@@ -93,12 +87,11 @@
         "continueToPayment": "Weiter zur Zahlung",
         "notRequired": "Diese Bestellung erfordert keinen Versand"
     },
-  
     "stepPayment": {
         "title": "Zahlung",
         "methodUnselected": "Wähle eine Zahlungsmethode",
         "creditCard": "Zahlungsarten",
-        "wireTransfer": "Banküberweisung",
+        "wireTransfer": "Manuelle Zahlung",
         "wireTransferDescription": "Nach Abschluss der Bestellung übersenden wir Ihnen die Daten für eine vorab Banküberweisung.",
         "paypalDescription": "Nach der Bestellung wirst Du auf die PayPal-Website weitergeleitet, um Dich anzumelden und die Zahlung zu autorisieren.",
         "endingIn": "<0/> endet mit <1/>",
@@ -110,7 +103,6 @@
         "subscriptionWithoutCustomer": "An account must be created in order to purchase your subscription.",
         "subscriptionWithCustomer": "By providing your card information, you allow the company to charge your card for future payments in accordance with their terms."
     },
-  
     "addressForm": {
         "customer_email": "Deine E-Mail-Adresse",
         "billing_address_title": "Rechnungsadresse",
@@ -140,7 +132,6 @@
         "shipping_address_zip_code": "Postleitzahl",
         "shipping_address_phone": "Telefon"
     },
-  
     "stepComplete": {
         "title": "Vielen Dank für deine Bestellung!",
         "description": "Bestellnummer: <WrapperOrderId>#{{orderNumber}}</WrapperOrderId>",
@@ -154,8 +145,6 @@
         "summary_title": "Zusammenfassung",
         "customer_title": "Kunde",
         "email": "E-Mail:",
-        "free_payment": "Diese Bestellung erforderte keine Zahlung"  
+        "free_payment": "Diese Bestellung erforderte keine Zahlung"
     }
-
-  }
-  
+}
